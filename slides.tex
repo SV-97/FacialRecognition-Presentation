@@ -1,0 +1,225 @@
+\documentclass[10pt]{beamer}
+\input{prelude.tex}
+\begin{document}
+
+\maketitle
+
+% \begin{frame}[fragile]{Wer bin ich?}
+%   \begin{itemize}
+%     \item 23 Jahre
+%     \item Mittlere Reife
+%           \\$\rightarrow$ Ausbildung Elektroniker
+%             \\$\rightarrow$ Weiterbildung SPS-Fachkraft
+%           \\$\rightarrow$ Ausbildung staatl. gepr. Techniker für Elektrotechnik % (Informationstechnik)
+%             \\$\rightarrow$ Studium Technomathematik im 3. Semester
+%   \end{itemize}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Gliederung}
+  \tableofcontents
+\end{frame}
+
+\section{Was ist Gesichtserkennung?}
+
+\begin{frame}{Was ist Gesichtserkennung?}
+
+  ''Gesichtserkennung bezeichnet die Analyse der Ausprägung sichtbarer Merkmale im Bereich des frontalen Kopfes, gegeben durch geometrische Anordnung und Textureigenschaften der Oberfläche.'' \cite{WikiGesichtserkennung}
+  \begin{center}
+    Wir unterscheiden:
+  \end{center}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{Lokalisation}\\
+        ''Wo im Bild befinden sich Gesichter?''
+      \end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{Zuordnung}\\
+        ''Wem gehört ein Gesicht?''
+      \end{center}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%\section{Wie funktioniert Gesichtserkennung?}
+%
+%\begin{frame}{Wie funktioniert Gesichtserkennung? \cite%{GesichtserkennungSkript}}
+%  Verschiedenste Verfahren:
+%  \begin{itemize}
+%    \item Template Matching
+%    \item Abgleich geometrischer Merkmale (z.B. Kanten)
+%    \item $2$-dimensionale DFT
+%    \item Graphen und Wavelets
+%    \item \emph{Eigengesichter}
+%    \item neuronale Netze
+%    \item ...
+%  \end{itemize}
+%\end{frame}
+
+\section{Wie wird Gesichtserkennung heutzutage eingesetzt?}
+
+\begin{frame}{Wie wird Gesichtserkennung heutzutage eingesetzt?}
+  \begin{itemize}
+    \item Erleichterte Bedienung von Geräten (Handy oder Tür automatisch entsperren, Autofokus an Kamera)
+    \item Emotionsanalyse (Werbung, Bewerbungsverfahren, Grenzkontrollen\cite{NatureEmotions})
+    \item Polizei und Staat (Tracking, Fahndungen)
+  \end{itemize}
+\end{frame}
+
+\section{Welche Probleme treten auf?}
+
+\subsection{Bias}
+\begin{frame}{Bias}
+  Systematische Fehler welche die Aussagekraft des Systems verringern, zum Beispiel \cite{NatureBias} \footnote{Vergleich anhand hochwertiger Polizeibilder - Überwachungskameras etc. sind i.d.R. wesentlich niedriger auflösend}:
+  \begin{itemize}
+    \item Als afroamerikanisch oder asiatisch markierte Gesichter werden im Vergleich zu weißen mit $10-100$-facher Wahrscheinlichkeit falsch identifiziert.
+    \item Frauen werden öfter als Männer falsch identifiziert.
+  \end{itemize}
+\end{frame}
+
+\subsection{Niedrige Zuverlässigkeit}
+\begin{frame}{Niedrige Zuverlässigkeit}
+  \begin{quote}
+    The assessment process is incredibly immature. Every time we understand a new dimension to evaluate, we find out that the industry is not performing at the level that it thought it did. \\ \begin{center}
+      -- \textbf{Deborah Raji} \cite{NatureBias}
+    \end{center}
+  \end{quote}
+
+  Sog. \emph{one-to-one verification} \footnote{Festellen ob es sich bei einem Gesicht um ein Vergleichsgesicht handelt.} funktioniert gut - bei \emph{one-to-many} \footnote{Feststellen ob ein Gesicht in einer Datenbank enthalten ist.} liegen allerdings noch große Probleme vor:
+
+  \pause
+  \begin{itemize}
+    \item Nach Aussage des Detroiter Polizeichefs handelt es sich bei 96\% aller Fälle um Fehlidentifizierungen. \cite{NatureBias}
+  \end{itemize}
+
+  \pause
+  Dies resultiert in einer Spaltung der Forschungsgemeinschaft.
+\end{frame}
+
+\subsection{Erosion der Privatsphäre}
+\begin{frame}{Erosion der Privatsphäre}
+  \begin{quote}
+    No system of mass surveillance has existed in any society that we know of to this point that has not been abused. \\ \begin{center}
+      -- \textbf{Edward Snowden} \cite{SnowdenInterview}
+    \end{center}
+  \end{quote}
+
+  \begin{itemize}
+    \item Grenzbehörden nutzen Gesichtserkennung für Profiling. \cite{NatureHalt}
+          \pause \item Privatfirmen bauen  im Zuge der Ausbreitung von Gesichtserkennung ein Überwachungsnetzwerk auf \footnote{z.B. stellt Amazon Polizeikräften vergünstigte Produkte zur Verfügung - im Gegenzug bewerben diese Amazon's ''Ring'' Überwachungskameras \cite{NatureHalt}}.
+          \pause \item Behörden nutzen Überwachungskameras und Kamerafahrzeuge in Kombination mit Gesichtserkennungstechnologien zur Fahndung. \cite{HelloWorld}
+  \end{itemize}
+\end{frame}
+
+% \subsection{Trainingsdaten aus problematischen Quellen}
+% \begin{frame}{Trainingsdaten aus problematischen Quellen}
+%   \begin{itemize}
+%     \item In Trainingsdaten vorkommende Personen haben meist kein % Einverständnis gegeben
+%     \item Irgendwas mit Clearview \cite{ClearviewHeise}
+%   \end{itemize}
+% \end{frame}
+
+\subsection{Fundamental immoralische Nutzung}
+\begin{frame}{Fundamental immoralische Nutzung}
+  \begin{figure}
+    \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{Uiguren-in-einem-Lager.jpg}
+    \caption{Gesichtserkennungssoftware und weitere Technologien des maschinellen Lernens werden in der Volksrepublik China zur Verfolgung der Volksgruppe der Uiguren verwendet \cite{NatureEthicalQuestions}. Bild \cite{WeltUiguren}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{quote}
+    Technology doesn't have a Hippocratic oath. So many decisions that have been made by technologists in academia, industry, the military, and government since at least the Industrial Revolution have been made on the basis of ''can we,'' not ''should we.'' And the intention driving a technology's invention rarely, if ever, limits its application and use. \\ \begin{center} -- \textbf{Edward Snowden, Permanent Record}\cite{PermanentRecord} \end{center}
+  \end{quote}
+\end{frame}
+
+% \begin{frame}{Einsatzmöglichkeiten}
+% 
+%   Grundlegende Unterteilung in \emph{one-to-one} und \emph{one-to-many verification} - die % Forschung in beiden Bereichen läuft getrennt \cite{NatureBias}
+% 
+% \end{frame}
+% \section{Die aktuelle Situation}
+% 
+% \begin{frame}[fragile]{Die aktuelle Situation}
+%   \begin{itemize}
+%     \item Großflächige, generelle Videoüberwachung durch Staaten vielerorts die Norm (z.B. % England, China)
+%     \item Privatunternehmen nutzen Gesichtserkennung zur Gewinnmaximierung (z.B. Google, % Facebook, Clearview für personalisierte Werbung, Tracking, Bewerbungsverfahren)
+%     \item Hochaktives Forschungsgebiet
+%   \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}[fragile]{Die aktuelle Situation}
+%   \begin{quote}
+%     I was reminded of what is perhaps the fundamental rule of technological progress: if % something can be done, it probably will be done, and possibly already has been. -- \textbf% {Edward Snowden, Permanent Record}
+%   \end{quote}
+% \end{frame}
+% 
+% \begin{frame}
+%   \begin{quote}
+%     Technology doesn't have a Hippocratic oath. So many decisions that have been made by % technologists in academia, industry, the military, and government since at least the % Industrial Revolution have been made on the basis of ''can we,'' not ''should we.'' And the % intention driving a technology's invention rarely, if ever, limits its application and use. % -- \textbf{Edward Snowden, Permanent Record}\cite{PermanentRecord}
+%   \end{quote}
+% \end{frame}
+% 
+% \begin{frame}
+%   \frametitle{China}
+%   Gesichtserkennungssoftware und weitere Technologien des maschinellen Lernens werden in China % zur Verfolgung der Volksgruppe der Uiguren verwendet.\cite{NatureEthicalQuestions}
+% \end{frame}
+% 
+% \section{Verschiedene Sichtweisen}
+% 
+% \begin{frame}
+% 
+%   \begin{quote}
+%     It can be maintained that modern warfare is less horrible than the warfare of pre-scientific % times; that bombs are probably more merciful than bayonets; that lachrhymatory gas and % mustard gas are perhaps the most humane weapons yet devised by military science; and that the % orthodox view [that the effect of science on war is merely to magnify its horror] rests % solely on loose-thinking sentimentalism. -- \textbf{G. H. Hardy}\cite[S. 81f]{Apology}
+%   \end{quote}
+% 
+% \end{frame}
+% 
+% 
+% \begin{frame}
+%   \frametitle{}
+% 
+%   \begin{quote}
+%     I always felt that it was unwise for the scientists to turn away from problems of technology. % This could leave it in the hands of dangerous and fanatical reactionaries. -- \textbf% {Stanisław Marcin Ulam}\cite[S. 190f]{Adventures}
+%   \end{quote}
+% 
+%   \begin{quote}
+%     Even the simplest calculation in the purest mathematics can have terrible consequences. % Without the invention of the infinitesimal calculus most of our technology would have been % impossible. Should we say therefore that calculus is bad? -- \textbf{Stanisław Marcin Ulam}% \cite[S. 222]{Adventures}
+%   \end{quote}
+% 
+%   \begin{itemize}
+%     \item Forschung sollte apolitisch und unabhängig von potenziellem Nutzen sein (z.B. Stanisław % Marcin Ulam)
+%     \item Wenn ich es nicht mache macht es jemand anderes
+%     \item Positiv
+%     \item Negativ
+%   \end{itemize}
+% 
+% \end{frame}
+% 
+\begin{frame}[allowframebreaks]
+  \small{\printbibliography}
+\end{frame}
+
+{\nologo
+
+% empty footer
+\setbeamertemplate{footline}[frame number]{} % gets rid of bottom navigation bars
+
+\setbeamertemplate{navigation symbols}{} % gets rid of bottom navigation symbols
+
+%gets rid of footer
+%will override 'frame number' instruction above
+%comment out to revert to previous/default definitions
+\setbeamertemplate{footline}{}
+
+
+\begin{frame}[standout]
+  Vielen Dank für Ihre Aufmerksamkeit
+\end{frame}
+}
+\end{document}
