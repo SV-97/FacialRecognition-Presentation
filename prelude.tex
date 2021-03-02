@@ -45,6 +45,15 @@
 \usepackage{csquotes}
 \usepackage{epigraph}
 
+% from Gonzalo Medina at https://tex.stackexchange.com/questions/30720/footnote-without-a-marker
+% footnote without marker
+\newcommand\blfootnote[1]{
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup
+}
+
 \setbeamercolor{background canvas}{bg=white!20}
 
 \title{Gesichtserkennungstechnologien und ihre ethischen Probleme}

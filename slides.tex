@@ -10,15 +10,25 @@
   \centering\includegraphics[width=.5\textwidth, height=\textheight, keepaspectratio]{QR}
 \end{frame}
 
-\begin{frame}{Gliederung}
-  \tableofcontents
-\end{frame}
+% \begin{frame}{Gliederung}
+%   \tableofcontents
+% \end{frame}
 
 \section{Was ist Gesichtserkennung?}
 
 \begin{frame}{Was ist Gesichtserkennung?}
 
-  ''Gesichtserkennung bezeichnet die Analyse der Ausprägung sichtbarer Merkmale im Bereich des frontalen Kopfes, gegeben durch geometrische Anordnung und Textureigenschaften der Oberfläche.'' \cite{WikiGesichtserkennung}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      ''Gesichtserkennung bezeichnet die Analyse der Ausprägung sichtbarer Merkmale im Bereich des frontalen Kopfes, gegeben durch geometrische Anordnung und Textureigenschaften der Oberfläche.'' \cite{WikiGesichtserkennung}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{faces_red.jpg}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
   \begin{center}
     Wir unterscheiden:
   \end{center}
@@ -36,7 +46,7 @@
       \end{center}
     \end{column}
   \end{columns}
-
+  \blfootnote{Bild: \cite{DetroitPolice}}
 \end{frame}
 
 %\section{Wie funktioniert Gesichtserkennung?}
@@ -57,22 +67,30 @@
 \section{Wie wird Gesichtserkennung heutzutage eingesetzt?}
 
 \begin{frame}{Wie wird Gesichtserkennung heutzutage eingesetzt?}
+  \begin{figure}
+    \includegraphics[width=.5\textwidth]{DB_faces.png}
+  \end{figure}
   \begin{itemize}
     \item Erleichterte Bedienung von Geräten (Handy oder Tür automatisch entsperren, Autofokus an Kamera)
     \item Emotionsanalyse (Werbung, Bewerbungsverfahren, Grenzkontrollen\cite{NatureEmotions})
     \item Polizei und Staat (Tracking, Fahndungen)
   \end{itemize}
+  \blfootnote{Bild: \cite{NewLimits}}
 \end{frame}
 
 \section{Welche Probleme treten auf?}
 
 \subsection{Bias}
 \begin{frame}{Bias}
-  Systematische Fehler welche die Aussagekraft des Systems verringern, zum Beispiel \cite{NatureBias} \footnote{Vergleich anhand hochwertiger Polizeibilder - Überwachungskameras etc. sind i.d.R. wesentlich niedriger auflösend}:
+  \begin{figure}
+    \includegraphics[width=.5\textwidth]{Upsample_Obama.png}
+  \end{figure}
+  Systematische Fehler welche die Aussagekraft des Systems verringern, zum Beispiel \cite{NatureBias}:
   \begin{itemize}
     \item Als afroamerikanisch oder asiatisch markierte Gesichter werden im Vergleich zu weißen mit $10-100$-facher Wahrscheinlichkeit falsch identifiziert.
     \item Frauen werden öfter als Männer falsch identifiziert.
   \end{itemize}
+  \blfootnote{Bild: \cite{ObamaUpsample}}
 \end{frame}
 
 \subsection{Niedrige Zuverlässigkeit}
@@ -83,7 +101,7 @@
     \end{center}
   \end{quote}
 
-  Sog. \emph{one-to-one verification} \footnote{Festellen ob es sich bei einem Gesicht um ein Vergleichsgesicht handelt.} funktioniert gut - bei \emph{one-to-many} \footnote{Feststellen ob ein Gesicht in einer Datenbank enthalten ist.} liegen allerdings noch große Probleme vor:
+  Sog. \emph{one-to-one verification} funktioniert gut - bei \emph{one-to-many} liegen allerdings noch große Probleme vor:
 
   \pause
   \begin{itemize}
@@ -121,14 +139,9 @@
 \begin{frame}{Fundamental immoralische Nutzung}
   \begin{figure}
     \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{Uiguren-in-einem-Lager.jpg}
-    \caption{Gesichtserkennungssoftware und weitere Technologien des maschinellen Lernens werden in der Volksrepublik China zur Verfolgung der Volksgruppe der Uiguren verwendet \cite{NatureEthicalQuestions}. Bild \cite{WeltUiguren}}
+    \caption{Gesichtserkennungssoftware und weitere Technologien des maschinellen Lernens werden in der Volksrepublik China zur Verfolgung der Volksgruppe der Uiguren verwendet \cite{NatureEthicalQuestions}.
+      \blfootnote{Bild: \cite{WeltUiguren}}}
   \end{figure}
-\end{frame}
-
-\begin{frame}
-  \begin{quote}
-    Technology doesn't have a Hippocratic oath. So many decisions that have been made by technologists in academia, industry, the military, and government since at least the Industrial Revolution have been made on the basis of ''can we,'' not ''should we.'' And the intention driving a technology's invention rarely, if ever, limits its application and use. \\ \begin{center} -- \textbf{Edward Snowden, Permanent Record}\cite{PermanentRecord} \end{center}
-  \end{quote}
 \end{frame}
 
 % \begin{frame}{Einsatzmöglichkeiten}
@@ -194,12 +207,14 @@
 % 
 % \end{frame}
 % 
-\begin{frame}[allowframebreaks]
-  \small{\printbibliography}
+
+\begin{frame}
+  \begin{quote}
+    Technology doesn't have a Hippocratic oath. So many decisions that have been made by technologists in academia, industry, the military, and government since at least the Industrial Revolution have been made on the basis of ''can we,'' not ''should we.'' And the intention driving a technology's invention rarely, if ever, limits its application and use. \\ \begin{center} -- \textbf{Edward Snowden, Permanent Record}\cite{PermanentRecord} \end{center}
+  \end{quote}
 \end{frame}
 
 {\nologo
-
 % empty footer
 \setbeamertemplate{footline}[frame number]{} % gets rid of bottom navigation bars
 
@@ -210,9 +225,9 @@
 %comment out to revert to previous/default definitions
 \setbeamertemplate{footline}{}
 
-
-\begin{frame}[standout]
-  Vielen Dank für Ihre Aufmerksamkeit
+\begin{frame}[allowframebreaks]
+  \small{\printbibliography}
 \end{frame}
 }
+
 \end{document}
